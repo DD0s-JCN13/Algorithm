@@ -17,11 +17,39 @@ public class Sequential {
 		do {
 			list.add(r.nextInt(100)+1);
 		}while(list.size()<20);
-		Iterator it = list.iterator();
 		Scanner sc = new Scanner(System.in);
-		while(it.hasNext()) {
-			System.out.println("第"+(counter)+"個數字：["+it.next().toString()+"]");
-			counter = counter + 1;
+		while(power) {
+			System.out.print("請輸入1~100之間的數字，或輸入0退出：");
+			String tmp = sc.next();
+			input = Integer.parseInt(tmp);
+			Iterator it = list.iterator();
+			if(input>0 && input<=100) {
+				counter = 1;
+				while(it.hasNext()) {
+					String out = it.next().toString();
+					int tmp2 = Integer.parseInt(out);
+					if(input == tmp2) {
+						System.out.println("在第"+counter+"個數字找到目標值：["+tmp2+"]");
+						break;
+					}else if(counter ==20) {
+						System.out.println("很抱歉，找不到相符的資料，請重新輸入");
+						break;
+					}else {
+						counter = counter + 1;
+					}
+				}
+			}else if(input==0) {
+				counter = 1;
+				while(it.hasNext()) {
+					System.out.println("第"+(counter)+"個數字：["+it.next().toString()+"]");
+					counter = counter + 1;
+				}
+				power = false;
+				break;
+			}else {
+				System.out.println("輸入格式錯誤，請重新輸入！");
+			break;
+			}
 		}
 	}
 
