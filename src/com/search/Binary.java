@@ -37,6 +37,8 @@ public class Binary {
 			}else if(input > 0 || input <= list.length) {
 				binary = true;
 				
+			}else {
+				System.out.println("資料格式錯誤，請重新輸入！");
 			}
 			
 		}
