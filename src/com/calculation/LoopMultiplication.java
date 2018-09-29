@@ -15,7 +15,7 @@ public class LoopMultiplication {
 				System.out.print("程式已關閉");
 				power = false;
 			}else if(input == 0) {
-				System.out.println("0! = 1");
+				System.out.println("0! = " + base);
 			}else if(input >= 1) {
 				for(int i=1;i<=input;i++) {
 					base = base * i;
