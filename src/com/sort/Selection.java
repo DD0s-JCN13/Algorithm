@@ -1,7 +1,7 @@
 package com.sort;
 
 public class Selection {
-	//選擇排序法 Selection sort
+	//選擇排序法 Selection Sort
 	static int list[] = new int[] {19,53,26,12,5,64,9};
 	static int tmp = 0;
 	public void Selection() {
