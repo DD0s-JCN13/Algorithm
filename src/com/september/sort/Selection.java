@@ -1,4 +1,4 @@
-package com.sort;
+package com.september.sort;
 
 public class Selection {
 	//選擇排序法 Selection Sort

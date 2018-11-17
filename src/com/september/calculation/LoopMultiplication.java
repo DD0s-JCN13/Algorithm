@@ -1,4 +1,4 @@
-package com.calculation;
+package com.september.calculation;
 
 import java.util.Scanner;
 

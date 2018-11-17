@@ -1,4 +1,4 @@
-package com.calculation;
+package com.september.calculation;
 
 public class MatrixMultiplication2x2 {
 	//二維矩陣乘法

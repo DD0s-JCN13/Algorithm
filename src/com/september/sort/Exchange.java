@@ -1,4 +1,4 @@
-package com.sort;
+package com.september.sort;
 
 public class Exchange {
 	//交換排序法 Exchange Sort

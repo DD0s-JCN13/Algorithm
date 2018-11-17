@@ -1,4 +1,4 @@
-package com.search;
+package com.september.search;
 
 import java.util.Scanner;
 import java.util.HashSet;
