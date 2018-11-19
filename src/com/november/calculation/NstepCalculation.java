@@ -3,6 +3,7 @@ package com.november.calculation;
 import java.util.Scanner;
 public class NstepCalculation {
 	public static void main(String args[]) {
+		//N階乘法
 	
 		int step;
 		int res=0;

@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class FibonacciNumbers {
 	public static void main(String args[]) {
+		//費氏數列
 	
 	int Fn=0;
 	boolean power = true;
