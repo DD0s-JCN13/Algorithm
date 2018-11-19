@@ -15,6 +15,7 @@ public class Combination {
 		this.M = m;
 	}
 	public static double returnstep(double step) {
+		//N階乘法
 		double stepres = 1;
 		for(double i=1;i<=step;i++) {
 			stepres=stepres*i;
@@ -22,6 +23,7 @@ public class Combination {
 		return stepres;
 	}
 	public static double returnC(double n, double m) {
+		//組合計算邏輯 C(n,m) = n! / [m!*(n-m)!]
 		double C = 1;
 		if(n==0||m==0) {
 			C = 1;
@@ -37,14 +39,15 @@ public class Combination {
 		return C;
 	}
 	public static double returnres(double a, double b) {
+		//組合公式 C(n,m) = C(n-1,m) + C(n-1,m-1)
 		double result = 0;
 		result = returnC((a-1),b) + returnC((a-1),(b-1));
 		return result;
 	}
 	public static void main(String args[]) {
 		
-		/*組合公式C(n,m)
-		n在上，m在下，兩者有一者為零則結果必為1
+		/*組合公式
+		C(n,m)之中，n在上，m在下，兩者有一者為零則結果必為1
 		若皆非零正數則為C(n,m) = C(n-1,m) + C(n-1,m-1)
 		計算過程 C(n,m) = n!/[m!*(n-m)!]
 		*/
