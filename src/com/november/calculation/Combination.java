@@ -14,7 +14,6 @@ public class Combination {
 	public void setm(double m) {
 		this.M = m;
 	}
-	
 	public static double returnstep(double step) {
 		double stepres = 1;
 		for(double i=1;i<=step;i++) {
