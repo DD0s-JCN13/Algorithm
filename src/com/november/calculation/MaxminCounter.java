@@ -9,7 +9,6 @@ public class MaxminCounter {
 	static boolean input = true;
 	static boolean pusher = false;
 	static boolean search = false;
-	//static int counter=0;
 	Scanner sc ;
 	public static List<Integer> origin = new ArrayList<Integer>();
 	public static List<Integer> ls = new ArrayList<Integer>();
@@ -23,9 +22,6 @@ public class MaxminCounter {
 			String read = sc.nextLine();
 			if(read!=null){
 				if(read.equals("x")) {
-					/*for (int i=0;i<origin.size();i++) {
-						System.out.print(origin.get(i)+" ");
-					}*/
 					for(int i=0;i<origin.size();i++) {
 						ls.add(origin.get(i));
 					}
@@ -38,11 +34,11 @@ public class MaxminCounter {
 						// TODO Auto-generated catch block
 						System.out.println("輸入格式錯誤，請重新輸入！");
 					}
-					//counter++;
 			 	}
 			}
 		}
 		if(pusher) {
+			//交換排序法，其結果為由小到大進行排序
 			int tmp=0;
 			for(int i=1;i<ls.size();i++) {
 				for(int j=0;j<ls.size()-1;j++) {
@@ -64,9 +60,11 @@ public class MaxminCounter {
 			String read2 = sc.nextLine();
 			if(read2!=null) {
 				if(read2.equals("MAX")) {
+					//取經過整理的最後結果，最後一筆必為最大值
 					int max = ls.get(ls.size()-1);
 					System.out.println("整體資料之最大值為： "+max);
 				}else if(read2.equals("min")) {
+					//與最大值相反，第一筆必為最小值
 					int min = ls.get(0);
 					System.out.println("整體資料之最小值為： "+min);
 				}else if(read2.equals("x")) {
@@ -85,6 +83,7 @@ public class MaxminCounter {
 						}
 					} catch (NumberFormatException e) {
 						// TODO Auto-generated catch block
+						//避免無法轉換之值出現
 						System.out.println("輸入格式錯誤，請重新輸入！");
 					}
 				}
