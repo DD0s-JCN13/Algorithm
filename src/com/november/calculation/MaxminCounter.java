@@ -23,6 +23,7 @@ public class MaxminCounter {
 			if(read!=null){
 				if(read.equals("x")) {
 					for(int i=0;i<origin.size();i++) {
+						//製造另一個ArrayList進行排列，以取得最小最大值
 						ls.add(origin.get(i));
 					}
 					input=false;
@@ -33,6 +34,7 @@ public class MaxminCounter {
 					} catch (NumberFormatException e) {
 						// TODO Auto-generated catch block
 						System.out.println("輸入格式錯誤，請重新輸入！");
+						//避免無法轉換之值出現
 					}
 			 	}
 			}
