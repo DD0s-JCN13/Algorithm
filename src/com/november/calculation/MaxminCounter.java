@@ -8,32 +8,41 @@ import java.util.Scanner;
 public class MaxminCounter {
 	static boolean input = true;
 	static boolean pusher = false;
-	static int counter=0;
-	static List<Integer> ls = new ArrayList<Integer>();
-	public void MaxminCounter() {
+	static boolean search = false;
+	//static int counter=0;
+	Scanner sc ;
+	public static List<Integer> origin = new ArrayList<Integer>();
+	public static List<Integer> ls = new ArrayList<Integer>();
+	public MaxminCounter() {
 		
 	}
 	public void log() {
-		Scanner sc = new Scanner(System.in);
+		sc = new Scanner(System.in);
 		while(input) {
 			System.out.println("請輸入要加入的數字，或輸入x結束輸入：");
 			String read = sc.nextLine();
 			if(read!=null){
 				if(read.equals("x")) {
+					/*for (int i=0;i<origin.size();i++) {
+						System.out.print(origin.get(i)+" ");
+					}*/
+					for(int i=0;i<origin.size();i++) {
+						ls.add(origin.get(i));
+					}
 					input=false;
 					pusher=true;
 				}else {
 					try {
-						ls.add(Integer.parseInt(read));
+						origin.add(Integer.parseInt(read));
 					} catch (NumberFormatException e) {
 						// TODO Auto-generated catch block
 						System.out.println("輸入格式錯誤，請重新輸入！");
 					}
-					counter++;
+					//counter++;
 			 	}
 			}
 		}
-		while(pusher) {
+		if(pusher) {
 			int tmp=0;
 			for(int i=1;i<ls.size();i++) {
 				for(int j=0;j<ls.size()-1;j++) {
@@ -45,13 +54,46 @@ public class MaxminCounter {
 				}
 			}
 			pusher=false;
+			search=true;
 		}
 	}
 	public void searching() {
-		System.out.println("");
+		sc = new Scanner(System.in);
+		while(search) {
+			System.out.println("請輸入要搜尋的第n筆內容，輸入x以結束系統，或輸入MAX或min來搜尋整體資料的最大值或最小值：");
+			String read2 = sc.nextLine();
+			if(read2!=null) {
+				if(read2.equals("MAX")) {
+					int max = ls.get(ls.size()-1);
+					System.out.println("整體資料之最大值為： "+max);
+				}else if(read2.equals("min")) {
+					int min = ls.get(0);
+					System.out.println("整體資料之最小值為： "+min);
+				}else if(read2.equals("x")) {
+					System.out.println("系統已關閉！");
+					search=false;
+					break;
+				}else {
+					try {
+						int info = Integer.parseInt(read2);
+						if(info-1<0) {
+							System.out.println("超出搜尋範圍，請重新輸入！");
+						}else if(info-1>=origin.size()) {
+							System.out.println("超出搜尋範圍，請重新輸入！");
+						}else {
+							System.out.println("第 "+info+"筆資料為："+origin.get(info-1));
+						}
+					} catch (NumberFormatException e) {
+						// TODO Auto-generated catch block
+						System.out.println("輸入格式錯誤，請重新輸入！");
+					}
+				}
+			}
+		}
 	}
 	public static void main(String args[]) {
 		MaxminCounter mmc = new MaxminCounter();
 		mmc.log();
+		mmc.searching();
 	}
 }
