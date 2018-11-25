@@ -6,6 +6,8 @@ public class RootGroup {
 		
 	}
 	public void sorter() {
+		//No item
+		System.out.println("[null]");
 		//Single item
 		for(int i=0;i<list.length;i++) {
 			if(i==(list.length-1)) {
