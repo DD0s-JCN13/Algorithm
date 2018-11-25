@@ -1,35 +1,29 @@
 package com.november.sortNcount;
 import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 public class RandomList {
 	//n項資料隨機排列
 	Random r1 = new Random();
 	int random = 0;
-	int counter = 0;
-	boolean checker = false;
-	static int[] rantmp = {};
-	static int[] list = {5,19,32,17,62,28,24};
-	static int[] nlist = {};
+	int tmp = 0;
+	private static int[] list = {5,19,32,17,62,28,24};
+	static List<Integer> rantmp = new ArrayList<Integer>();
+	//陣列用來存放原始資料列，而ArrayList用來存放隨機排列後的結果
 	public RandomList() {
 		
 	}
 	public void generate() {
 		for(int i=0;i<list.length;i++) {
-			if(i==0) {
-				rantmp = list;
-				nlist = list;
-				random = r1.nextInt(list.length);
-			}else {
-				for(int j=0;j<i;j++) {
-					if(j==i-1) {
-						
-					}
-				}
-			}
-			rantmp[i] = random;
+			//ArrayList起始加入元素
+			rantmp.add(list[i]);
 		}
-		for(int i=0;i<list.length;i++) {
-			counter = rantmp[i];
-			nlist[i] = list[counter];
+		for(int i=0;i<rantmp.size();i++) {
+			//原理近似於洗牌
+			random = r1.nextInt(rantmp.size()-1);
+			tmp = rantmp.get(i);
+			rantmp.set(i, rantmp.get(random));
+			rantmp.set(random, tmp);
 		}
 	}
 	public void printer(){
@@ -42,11 +36,11 @@ public class RandomList {
 			}
 		}
 		System.out.print("隨機排列後之資料： ");
-		for(int i=0;i<nlist.length;i++) {
-			if(i!=nlist.length-1) {
-				System.out.print(nlist[i]+" ");
+		for(int i=0;i<rantmp.size();i++) {
+			if(i!=rantmp.size()-1) {
+				System.out.print(rantmp.get(i)+" ");
 			}else {
-				System.out.println(nlist[i]);
+				System.out.println(rantmp.get(i));
 			}
 		}
 	}
