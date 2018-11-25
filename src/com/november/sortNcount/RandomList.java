@@ -5,6 +5,7 @@ public class RandomList {
 	Random r1 = new Random();
 	int random = 0;
 	int counter = 0;
+	boolean checker = false;
 	static int[] rantmp = {};
 	static int[] list = {5,19,32,17,62,28,24};
 	static int[] nlist = {};
@@ -19,9 +20,9 @@ public class RandomList {
 				random = r1.nextInt(list.length);
 			}else {
 				for(int j=0;j<i;j++) {
-					do {
-						random = r1.nextInt(list.length);
-					}while(random == rantmp[]);
+					if(j==i-1) {
+						
+					}
 				}
 			}
 			rantmp[i] = random;
