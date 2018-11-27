@@ -12,8 +12,8 @@ public class RG_EZmode {
 	Random rd = new Random();
 	Scanner sc = new Scanner(System.in);
 	List<Integer> origin = new ArrayList<>();
-	List<Integer> rancode = new ArrayList<>();
-	Set<Integer> random = new HashSet<>();
+	List<Integer> rancode;
+	Set<Integer> random;
 public RG_EZmode() {
 	
 }
@@ -44,8 +44,9 @@ public void printer() {
 	while(printerp) {
 		System.out.println("請輸入0~"+origin.size()+"之間的任意整數，或輸入X結束查詢：");
 		String in = sc.nextLine();
+		rancode = new ArrayList<>();
+		random = new HashSet<>();
 		if(in.equals("X")) {
-			rancode.removeAll(null);
 			System.out.println("系統已關閉！");
 			printerp = false;
 			break;
@@ -56,23 +57,40 @@ public void printer() {
 			} catch (NumberFormatException e) {
 				// TODO Auto-generated catch block
 				System.out.println("輸入格式錯誤，請重新輸入！");
+				continue;
 			}
-			do {
-				int code = rd.nextInt(origin.size()-1);
-				random.add(code);
-			}while(random.size()<parse);
-			System.out.print("包含"+parse+"個元素的子集合亂數生成結果為：[");
-			for(int i:random) {
-				rancode.add(i);
-			}
-			for(int i=0;i<rancode.size();i++) {
-				if(i==rancode.size()-1) {
-					System.out.print(origin.get(rancode.get(i)));
-				}else {
-					System.out.print(origin.get(rancode.get(i))+" ");
+			if(parse==origin.size()) {
+				System.out.print("包含"+parse+"個元素(所有元素)的子集合為：[");
+				for(int i=0;i<origin.size();i++) {
+					if(i<origin.size()-1) {
+						System.out.print(origin.get(i)+" ");
+					}else {
+						System.out.println(origin.get(i)+"]");
+					}
 				}
+			}else if(parse==0) {
+				System.out.println("包含0個元素的子集合為「空集合」");
+			}else if(parse>origin.size()||parse<0) {
+				System.out.println("超出搜尋範圍，請重新輸入！");
+				break;
+			}else {
+				do {
+					int code = rd.nextInt(origin.size());
+					random.add(code);
+				}while(random.size()<parse);
+				System.out.print("包含"+parse+"個元素的子集合亂數生成結果為：[");
+				for(int i:random) {
+					rancode.add(i);
+				}
+				for(int i=0;i<rancode.size();i++) {
+					if(i==rancode.size()-1) {
+						System.out.print(origin.get(rancode.get(i)));
+					}else {
+						System.out.print(origin.get(rancode.get(i))+" ");
+					}
+				}
+				System.out.println("]");	
 			}
-			System.out.println("]");
 		}
 	}
 }
