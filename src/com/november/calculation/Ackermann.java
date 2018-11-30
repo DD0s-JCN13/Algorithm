@@ -20,6 +20,7 @@ public class Ackermann {
 		
 	}
 	public long Ackernew(long m, long n) {
+		//new calculation method according to data structure.
 		result=0;
 		int count=0;
 		int code = Integer.parseInt(Long.toString(m));
