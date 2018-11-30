@@ -51,10 +51,10 @@ public class Ackermann {
 				if(count==0) {
 					result=16;
 				}else {
-					result = result*16;	
+					result = result*result;	
 				}
 				count = count+1;
-			}while(count<Integer.parseInt(Long.toString(n))+1);
+			}while(count<Integer.parseInt(Long.toString(n))+2);
 			result = result-3;
 			break;
 		default:
@@ -82,8 +82,8 @@ public class Ackermann {
 		Ackermann ack = new Ackermann();
 		long formnew = ack.Ackernew(4,1);
 		System.out.println(Long.toString(formnew));
-		long form = ack.Acker(4,1);
-		System.out.print(Long.toString(form));
+		//long form = ack.Acker(4,1);
+		//System.out.print(Long.toString(form));
 	}
 
 }
