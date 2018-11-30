@@ -81,7 +81,7 @@ public class Ackermann {
 	}
 	public static void main(String args[]) {
 		Ackermann ack = new Ackermann();
-		long formnew = ack.Ackernew(4,1);
+		long formnew = ack.Ackernew(3,1);
 		System.out.println(Long.toString(formnew));
 		//long form = ack.Acker(4,1);
 		//System.out.print(Long.toString(form));

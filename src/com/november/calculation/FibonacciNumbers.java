@@ -15,7 +15,7 @@ public class FibonacciNumbers {
 		System.out.println("請輸入要計算的費氏級數，或輸入-1結束程式：");
 		String in = sc.nextLine();
 		Fn = Integer.parseInt(in);
-		if(Fn==-1) {
+		if(Fn==-1) { 
 			power = false;
 			System.out.println("程式已關閉");
 			break;

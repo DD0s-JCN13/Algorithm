@@ -6,7 +6,7 @@ public class NstepCalculation {
 		//N階乘法
 	
 		int step;
-		int res=0;
+		long res=0;
 		boolean power = true;
 		while(power) {
 			System.out.println("請輸入要計算的N階乘法，或輸入「-1」結束程式：");
@@ -25,7 +25,7 @@ public class NstepCalculation {
 						res = res*i;
 					}
 				}
-				System.out.println(step+"階層的計算結果為  "+res);
+				System.out.println(step+"階層的計算結果為  "+Long.toString(res));
 			}
 		
 		

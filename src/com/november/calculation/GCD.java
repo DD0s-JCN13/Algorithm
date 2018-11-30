@@ -62,7 +62,12 @@ public class GCD {
 					//此時，a2t必大於a1t
 					counter = true;
 					enter = false;
-			}	
+				}else {
+					a1t=a1;
+					a2t=a2;
+					counter = true;
+					enter = false;
+				}
 		}
 		while(counter) {
 				//判斷是否已經產生最大公因數>>a1t與a2t之間是否已經有一方為零
