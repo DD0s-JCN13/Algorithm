@@ -6,10 +6,19 @@ import java.util.List;
 
 
 public class FastSort {
-	Scanner sc;
-	static List<Integer> data = new ArrayList<Integer>();
 	public FastSort() {
 		
+	}
+	Scanner sc;
+	int first=0;
+	int end=0;
+	FastSort fs = new FastSort();
+	static List<Integer> data = new ArrayList<Integer>();
+	public int getFirst() {
+		return first;
+	}
+	public int getEnd() {
+		return end;
 	}
 	public void Sorting() {
 		boolean sorter = true;
