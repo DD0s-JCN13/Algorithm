@@ -49,13 +49,35 @@ public class FastSort {
 		}
 		
 	}
-	public void Sorting() {
+	public void Sorting(int front, int back) {
 		boolean sorter = true;
-		int counter=0;
 		int getterL=0;
 		int getterR=0;
+		int positionL=0;
+		int positionR=0;
 		while(sorter) {
-			
+			int key = data.get(front);
+			for(int i=front+1;i<back;i++) {
+				if(data.get(i)>key) {
+					getterL = data.get(i);
+					positionL=i;
+					break;
+				}
+			}
+			for(int i=back;i>front;i--) {
+				if(data.get(i)<key) {
+					getterR = data.get(i);
+					positionR=i;
+					break;
+				}
+			}
+			if(positionL<positionR) {
+				int tmp = getterL;
+				data.set(positionL, getterR);
+				data.set(positionR, tmp);
+			}else {
+				
+			}
 			
 			
 			
